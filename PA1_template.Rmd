@@ -111,7 +111,7 @@ impute_data[missing_data, "steps"] = rep_mean
 
 Make a histogram of the total number of steps taken each day 
 
-```{r , echo = FALSE}
+```{r}
 steps_mean2 <- aggregate(impute_data$steps, by=list(impute_data$date), FUN=sum, na.rm=TRUE)
 
 names(steps_mean2) = c("date", "total")

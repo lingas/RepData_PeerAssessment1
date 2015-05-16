@@ -133,6 +133,22 @@ impute_data[missing_data, "steps"] = rep_mean
 
 Make a histogram of the total number of steps taken each day 
 
+
+```r
+steps_mean2 <- aggregate(impute_data$steps, by=list(impute_data$date), FUN=sum, na.rm=TRUE)
+
+names(steps_mean2) = c("date", "total")
+
+hist(steps_mean2$total, 
+     main ="Total number of steps taken each day with NA values replaced", 
+     xlab ="Number of Steps", 
+     ylab ="Frequency",
+     border="white", 
+     col="black", 
+     lwd=3
+     )
+```
+
 ![](PA1_template_files/figure-html/unnamed-chunk-10-1.png) 
 
 Calculating the mean of the total number of steps taken per day
